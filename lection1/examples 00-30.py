@@ -38,16 +38,123 @@
 
 #  4. Найти максимальное из трех чисел
 
+# Без ввода чисел
 
+# Просто
+
+# print(max(22,55,76))
+
+# Итеративно
+
+# def find_max(r,t,y):
+#     max = r
+#     if t > max:
+#         max = t
+#     elif y > max:
+#         max = y
+#     return max
+# print(find_max(3,55,67))
+
+# Списком
+
+# list_of_nums = [5, 66, 9]
+# print(max(list_of_nums))
+
+# Со вводом чисел, любое количество чисел
+
+# def compare_nums(n):
+#     list = []
+#     for i in range(n):
+#         list.append(input("Enter a number to compare: "))
+#     return list
+
+# print(max(compare_nums(3)))
 
 #  5. Написать программу вычисления значения функции y = f(a)
+
+# import math
+
+# def some_func(degrees):
+#     return round(math.sin(math.pi*degrees/180.0), 2)
+
+# a = 30
+# print(some_func(a))
+
 #  6. Выяснить является ли число чётным
+
+# def even_odd():
+#     num = int(input("Enter number: "))
+#     if num % 2 == 0:
+#         return "even"
+#     return "odd"
+
+# print(even_odd())
+
+# shortly
+
+# num = int(input("Enter number: "))
+# print("even" if num % 2 == 0 else "odd")
+
 #  7. Показать числа от -N до N
+
+# Veriant 1
+# def show_nums(N):
+#     list = []
+#     for i in range(-N, N+1):
+#         list.append(i)
+#     return list
+
+# print(show_nums(5))
+
+# Veriant 2
+# def show_nums(N):
+#     for i in range(-N, N+1):
+#         print(i, end=" ")
+
+# show_nums(4)
+
 #  8. Показать четные числа от 1 до N
+
+# def print_even(n):
+#     for i in range(1, n+1):
+#         if i % 2 == 0:
+#             print(i)
+
+# print_even(50)
+
 #  9. Показать последнюю цифру трёхзначного числа
+
+# def print_last_of_three(n):
+#     print(n % 10)
+
+# print_last_of_three(783)
+
 # 10. Показать вторую цифру трёхзначного числа
+
+# def print_two_of_three(n):
+#     print((n//10) % 10)
+
+# print_two_of_three(783)
+
 # 11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
+
+# import random
+
+# def max_digit(a):
+#     print(f"In the number {a} maximal digit is {a//10 if a % 10 < a//10 else a % 10}")
+
+# max_digit(random.randint(10, 99))
+
+# def max_digit_via_str(a):
+#     a = str(a)
+#     print(f"In the number {a} maximal digit is {max(a)}")
+
+# max_digit_via_str(random.randint(10, 99))
+
 # 12. Удалить вторую цифру трёхзначного числа
+
+
+
 # 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
 # 14. Найти третью цифру числа или сообщить, что её нет
 
@@ -103,6 +210,22 @@
 
 # ## Почувствуй себя мидлом*
 # 23. Показать таблицу квадратов чисел от 1 до N
+
+# def enter_num(phrase):
+#     while True:
+#         try:
+#             n = int(input(phrase))
+#             if n > 0:
+#                 return n
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
+
+# def print_it(r):
+#     for i in range(1, r+1):
+#         print(i**2)
+
+# print_it(enter_num("Enter number N: "))
+
 # 24. Найти кубы чисел от 1 до N
 # 25. Найти сумму чисел от 1 до А
 # 26. Возведите число А в натуральную степень B используя цикл
