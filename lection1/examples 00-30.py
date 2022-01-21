@@ -153,13 +153,46 @@
 
 # 12. Удалить вторую цифру трёхзначного числа
 
+# def del_second_digit(num):
+#     return num // 100 * 10 + num % 10
 
+# print(del_second_digit(264))
 
 # 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
+
+# def multiplicity(a, b):
+#     print(f"{a} кратно {b}" if a%b==0 else f"{a} не кратно {b}, остаток от деления: {a % b}")
+
+# multiplicity(900,70)
+
 # 14. Найти третью цифру числа или сообщить, что её нет
+
+# def find_third_digit(n):
+#     n = str(n)
+#     if len(n) < 3:
+#         return -1
+#     else:
+#         return n[2]
+
+# def find_third_digit_with_math(x):
+#     if x%10 == 0:
+#         return -1
+#     else:
+#         while x//100 > 9:
+#             x//= 10
+#         return x%10
+
+# def print_answer(arg):
+#     print("There is no third digit in this number!" if arg == -1 else f"Third digit is: {arg}")
+
+# print_answer(find_third_digit_with_math(831246))
+# print_answer(find_third_digit(2381))
 
 # ## Почувствуй себя джуном*
 # 15. Дано число. Проверить кратно ли оно 7 и 23
+
+
+
 # 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным
 # 17. По двум заданным числам проверять является ли одно квадратом другого
 # 18. Проверить истинность утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z
