@@ -1,18 +1,90 @@
 # ## Почувствуй себя сеньором*
 # 31. Задать массив из 8 элементов и вывести их на экран
+# from array import *
+
+# arr = array('i',[1,2,3,4,5,6,7,8])
+
+# ls = list(range(8))
+# arr2 = array('i')
+# arr2.fromlist(ls)
+
+# print (arr2)
+# print (arr)
+
 # 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран
-# 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
+# from array import *
+# from random import *
+
+# ls = []
+# for i in range(8):
+#     ls.append(randint(0,1))
+# arr = array('i')
+# arr.fromlist(ls)
+
+# print(arr)
+
+# 33. Задать массив из 12 элементов, заполненных числами из [-9,9].
+# Найти сумму положительных/отрицательных элементов массива
+
+# from array import *
+# from random import *
+
+# def generate_array():
+#     ls = []
+#     for i in range(12):
+#         ls.append(randint(-9,9))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
+
+# def counter(arr):
+#     ls = [0,0]
+#     for i in arr:
+#         if i > 0:
+#             ls[0] += i
+#         else:
+#             ls[1] +=i
+#     return ls
+
+# def main():
+#     arr = generate_array()
+#     print(arr)
+#     ls = counter(arr)
+#     print(f"Summ of positive numbers is {ls[0]}, summ of negative numbers is {ls[1]}")
+
+# main()
+
 # 34. Написать программу замену элементов массива на противоположные
 
-# list = [2, 22, 332, 45]
+# from array import *
+# from random import *
 
-# for i in range(0, len(list)):
-#     list[i] *= -1
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(-9, 9))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     print(arr)
+#     return arr
 
-# print(list)
+# def change_1(arr):
+#     i = 0
+#     while i < len(arr):
+#         arr[i] *= -1
+#         i += 1
+#     return arr
+
+# print(change_1(generate_array(5)))
 
 # 35. Определить, присутствует ли в заданном массиве, некоторое число
-# 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
+
+
+
+# 36. Задать массив, заполнить случайными положительными трёхзначными числами.
+# Показать количество нечетных\четных чисел
+
+
 # 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 # 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 # 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
