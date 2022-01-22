@@ -244,6 +244,27 @@
 # print(f"{x}, {y}, четверть {f(x,y)}")
 
 # 20. Задать номер четверти, показать диапазоны для возможных координат
+
+# def enter_num(phrase):
+#     while True:
+#         try:
+#             n = int(input(phrase))
+#             if 5 > n > 0:
+#                 return n
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
+
+# def posible_values(a):
+#     dict_xy = {
+#         1: "All positive x and y values.",
+#         2: "All positive x and negative y values",
+#         3: "All negative x and y values",
+#         4: "All negative x and positive y values"
+#     }
+#     return dict_xy[a]
+
+# print(posible_values(enter_num("Enter quarter number: ")))
+
 # 21. Программа проверяет пятизначное число на палиндромом.
 
 # n = 54345
@@ -254,6 +275,28 @@
 # print(IsPalindrom(n))
 
 # 22. Найти расстояние между точками в пространстве 2D/3D
+# from math import sqrt
+
+# def enter_num(phrase):
+#     while True:
+#         a = input(phrase).split(",")
+#         if len(a) == 2:
+#             try:
+#                 for x in a:
+#                     a[a.index(x)] = float(x)
+#                 return a
+#             except ValueError:
+#                 print("Something is wrong, try one more time!")
+
+# def count_distance(a, b):
+#     return sqrt(abs(a[1]-b[1])**2 + abs(a[0]-b[0])**2)
+
+# x = count_distance(
+#     enter_num("Enter first dot coordinates separated by commas: "),
+#     enter_num("Enter second dot coordinates separated by commas: ")
+# )
+
+# print(f"Dictance between them is: {round(x, 2)}")
 
 # ## Почувствуй себя мидлом*
 # 23. Показать таблицу квадратов чисел от 1 до N
@@ -274,8 +317,34 @@
 # print_it(enter_num("Enter number N: "))
 
 # 24. Найти кубы чисел от 1 до N
+
+# def pow_3(N):
+#     answer = []
+#     for i in range(1, N+1):
+#         answer.append(i**3)
+#     return answer
+
+# print(pow_3(5))
+
 # 25. Найти сумму чисел от 1 до А
+
+# def find_sum(A):
+#     list_a = list(range(1, A+1))
+#     sum = 0
+#     for i in list_a:
+#         sum += i
+#     return sum
+
+# def find_sum_math(A):
+#     return A*(A+1)//2
+
+# print(find_sum(5))
+# print(find_sum_math(6))
+
 # 26. Возведите число А в натуральную степень B используя цикл
+
+
+
 # 27. Определить количество цифр в числе
 # 28. Подсчитать сумму цифр в числе
 # 29. Написать программу вычисления произведения чисел от 1 до N
