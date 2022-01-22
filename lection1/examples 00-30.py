@@ -343,9 +343,62 @@
 
 # 26. Возведите число А в натуральную степень B используя цикл
 
+# def power(A, B):
+#     answer = 1
+#     for i in range(B):
+#         answer *= A
+#     return answer
 
+# print (power(2,3))
 
 # 27. Определить количество цифр в числе
+
+# def digits_in_number(n):
+#     return len(str(n))
+
+# print(digits_in_number(123456))
+
 # 28. Подсчитать сумму цифр в числе
+
+# def count_digits_sum(n):
+#     sum = 0
+#     n = str(n)
+#     for i in n:
+#         sum += int(i)
+#     return sum
+
+# def count_digits_sum_math(n):
+#     sum = 0
+#     for i in range(len(str(n))):
+#         sum += n % 10
+#         n //= 10
+#     return sum
+
+# print(count_digits_sum(12345))
+# print(count_digits_sum_math(123456))
+
 # 29. Написать программу вычисления произведения чисел от 1 до N
-# 30. Показать кубы чисел, заканчивающихся на четную цифру
+# from math import factorial
+
+# def find_fact(N):
+#     list_a = list(range(1, N+1))
+#     sum = 1
+#     for i in list_a:
+#         sum *= i
+#     return sum
+
+# def factorial_recurs(N):
+#     return 1 if N == 1 else N * factorial_recurs(N-1)
+
+# print(factorial(5))
+# print(find_fact(5))
+# print(factorial_recurs(5))
+
+# 30. Показать кубы чисел, заканчивающихся на четную цифру (диапазон возьму от 1 до 6)
+
+def show_cubes_of_numbers(a, b):
+    for i in range(a, b+1):
+        if i % 2 == 0:
+           print(i**3)
+
+show_cubes_of_numbers(1, 6)
