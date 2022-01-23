@@ -118,7 +118,7 @@
 #     ls = [0,0]
 #     for i in arr:
 #         if i%2==0:
-#             ls[0]+=1  
+#             ls[0]+=1
 #         else:
 #             ls[1]+=1
 #     return ls
@@ -179,18 +179,63 @@
 
 # main()
 
-# 39. Найти произведение пар чисел в одномерном массиве. 
+# 39. Найти произведение пар чисел в одномерном массиве.
 # Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
+# from array import *
+# from random import *
 
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(-9, 9))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
 
-# 40. В Указанном массиве вещественных чисел найдите разницу между максимальным 
-# и минимальным элементом
+# def count_pairs(arr):
+#     ls = []
+#     i = 0
+#     y = len(arr)-1
+#     while i < y/2:
+#         ls.append(arr[i] * arr[y-i])
+#         i += 1
+#     return ls
 
+# def main():
+#     arr = generate_array(6)
+#     print(arr)
+#     print(count_pairs(arr))
 
+# main()
+
+# 40. В Указанном массиве вещественных чисел найдите разницу 
+# между максимальным и минимальным элементом
+
+# from array import *
+# from random import *
+
+# def generate_array(n):
+#     arr = array('i')
+#     for i in range(n):
+#         arr.append(randint(-9,9))
+#     return arr
+
+# def diff_max_min(arr):
+#     return max(arr)-min(arr)
+    
+# def main():
+#     arr = generate_array(5)
+#     print(arr)
+#     print(diff_max_min(arr))
+
+# main()
 
 # ## Почувствуй себя лидом*
 # 41. Выяснить являются ли три числа сторонами треугольника
+
+
+
 # 42. Определить сколько чисел больше 0 введено с клавиатуры
 # 43. Написать программу преобразования десятичного числа в двоичное
 # 44. Найти точку пересечения двух прямых заданных уравнением y = k1 * x + b1, y = k2 * x + b2, b1 k1 и b2 и k2 заданы
