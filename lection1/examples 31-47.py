@@ -79,16 +79,115 @@
 
 # 35. Определить, присутствует ли в заданном массиве, некоторое число
 
+# from array import *
+# from random import *
 
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(-9, 9))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
+
+# def is_there_a_number(x, arr):
+#     return "True" if x in arr else "False"
+
+# def main():
+#     arr = generate_array(15)
+#     print(arr)
+#     print(is_there_a_number(5, arr))
+
+# main()
 
 # 36. Задать массив, заполнить случайными положительными трёхзначными числами.
 # Показать количество нечетных\четных чисел
 
+# from array import *
+# from random import *
+
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(100,999))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
+
+# def num_of_even_odd(arr):
+#     ls = [0,0]
+#     for i in arr:
+#         if i%2==0:
+#             ls[0]+=1  
+#         else:
+#             ls[1]+=1
+#     return ls
+
+# def main():
+#     arr = generate_array(8)
+#     ls = num_of_even_odd(arr)
+#     print(arr)
+#     print(f"There is {ls[0]} even and {ls[1]} odd numbers in given array.")
+
+# main()
 
 # 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+
+# from array import *
+# from random import *
+
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(0,200))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
+
+# def number_of_objects(arr):
+#     q = 0
+#     for i in arr:
+#         if i in range(10,100):
+#             q+=1
+#     return q
+
+# print(number_of_objects(generate_array(123)))
+
 # 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
-# 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
-# 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+
+# from array import *
+# from random import *
+
+# def generate_array(n):
+#     ls = []
+#     for i in range(n):
+#         ls.append(randint(-9,9))
+#     arr = array('i')
+#     arr.fromlist(ls)
+#     return arr
+
+# def sum_of_odd_positions(arr):
+#     sum = 0
+#     for i in range(0, len(arr), 2):
+#         sum += arr[i]
+#     return sum
+
+# def main():
+#     arr = generate_array(5)
+#     print(arr)
+#     print(sum_of_odd_positions(arr))
+
+# main()
+
+# 39. Найти произведение пар чисел в одномерном массиве. 
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+
+
+# 40. В Указанном массиве вещественных чисел найдите разницу между максимальным 
+# и минимальным элементом
+
+
 
 # ## Почувствуй себя лидом*
 # 41. Выяснить являются ли три числа сторонами треугольника
