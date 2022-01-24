@@ -209,7 +209,7 @@
 
 # main()
 
-# 40. В Указанном массиве вещественных чисел найдите разницу 
+# 40. В Указанном массиве вещественных чисел найдите разницу
 # между максимальным и минимальным элементом
 
 # from array import *
@@ -223,7 +223,7 @@
 
 # def diff_max_min(arr):
 #     return max(arr)-min(arr)
-    
+
 # def main():
 #     arr = generate_array(5)
 #     print(arr)
@@ -233,13 +233,91 @@
 
 # ## Почувствуй себя лидом*
 # 41. Выяснить являются ли три числа сторонами треугольника
+# В треугольнике сумма длин двух любых сторон больше длины третьей стороны
 
+# def enter_num(phrase):
+#     while True:
+#         triangle = input(phrase).split(",")
+#         if len(triangle) == 3:
+#             try:
+#                 for x in triangle:
+#                     triangle[triangle.index(x)] = float(x)
+#                 return triangle
+#             except ValueError:
+#                 print("Something is wrong, try one more time!")
 
+# def is_triangle(t):
+#     return t[0]+t[1] > t[2] and t[0]+t[2] > t[1] and t[1]+t[2] > t[0]
+
+# print(is_triangle(enter_num("Type in sides of tiangle values, sparate commas: ")))
 
 # 42. Определить сколько чисел больше 0 введено с клавиатуры
+
+# def enter_num(phrase):
+#     while True:
+#         nums = input(phrase).split(",")
+#         try:
+#             for x in nums:
+#                 nums[nums.index(x)] = float(x)
+#             return nums
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
+
+# def count_positive_numbers(ls):
+#     count = 0
+#     for i in ls:
+#         if i > 0:
+#             count+=1
+#     return count
+
+# def main():
+#     v = count_positive_numbers(enter_num("Enter numbers you want to check, separate commas: "))
+#     print(f"You have entered {v} positive numbers")
+
+# main()
+
+# Optimized
+# def enter_num_and_count(phrase):
+#     while True:
+#         nums = input(phrase).split(",")
+#         count = 0
+#         try:
+#             for x in nums:
+#                 if float(x) > 0:
+#                     count += 1
+#             return count
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
+
+# def main():
+#     v = enter_num_and_count("Enter numbers you want to check, separate commas: ")
+#     print(f"Positive numbers entered: {v} ")
+
+# main()
+
 # 43. Написать программу преобразования десятичного числа в двоичное
+
+# print(bin(5))
+
 # 44. Найти точку пересечения двух прямых заданных уравнением y = k1 * x + b1, y = k2 * x + b2, b1 k1 и b2 и k2 заданы
+
+# def lines_cross_point(b1, k1, b2, k2):
+#     x = round((b2 - b1) / (k1 - k2), 2)
+#     y = round(k1 * x + b1, 2)
+#     return x, y
+
+# def main():
+#     k1, b1, k2, b2 = 1, -3, -1, 2
+#     if (k1 == k2 and b1 != b2): return "Parallel"
+#     elif (k1 == k2 and b1 == b2): return "Match up"
+#     else: return print(f"Cross point coordinates: {lines_cross_point(1,-3,-1,2)}")
+
+# main()
+
 # 45. Показать числа Фибоначчи
+
+
+
 # 46. Написать программу масштабирования фигуры
 # ```
 # Тут для тех кто далеко улетел, чтобы задавались вершины фигуры списком (одной строкой)
