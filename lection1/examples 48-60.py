@@ -1,7 +1,34 @@
 # ## Двумерные массивы
 # 48. Показать двумерный массив размером m×n заполненный целыми числами
+# from random import randint
+
+# def generate_2D_list(m,n):
+#     return [[randint(-9, 9) for i in range(n)] for i in range(m)]
+
+# def main():
+#     ls = generate_2D_list(3,5)
+#     for i in ls:
+#         print(i)
+
+# main()
+
 # 49. Показать двумерный массив размером m×n заполненный вещественными числами
+# from random import random
+
+# def generate_2D_list(m,n):
+#     return [[round(random()*10, 2) for i in range(n)] for i in range(m)]
+
+# def main():
+#     ls = generate_2D_list(3,5)
+#     for i in ls:
+#         print(i)
+
+# main()
+
 # 50. В двумерном массиве n×k заменить четные элементы на противоположные
+
+
+
 # 51. Задать двумерный массив следующим правилом: Aₘₙ = m+n
 # 52. В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты
 # 53. В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет

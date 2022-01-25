@@ -272,7 +272,22 @@
 # def IsPalindrom(n):
 #     n = str(n)
 #     return n[0]==n[4] and n[1]==n[3]
+
 # print(IsPalindrom(n))
+
+# Рекусивно для любой строки
+
+# def is_palindrom_recurs(s):
+#     if len(s) <= 0:
+#         return True
+#     else:
+#         return s[0] == s[-1] and is_palindrom_recurs(s[1:-1])
+
+# Same in one line
+# def is_palindrom_recurs(s):
+#     return True if len(s) <= 0 else s[0] == s[-1] and is_palindrom_recurs(s[1:-1])
+
+# print(is_palindrom_recurs("54345"))
 
 # 22. Найти расстояние между точками в пространстве 2D/3D
 # from math import sqrt
@@ -396,9 +411,9 @@
 
 # 30. Показать кубы чисел, заканчивающихся на четную цифру (диапазон возьму от 1 до 6)
 
-def show_cubes_of_numbers(a, b):
-    for i in range(a, b+1):
-        if i % 2 == 0:
-           print(i**3)
+# def show_cubes_of_numbers(a, b):
+#     for i in range(a, b+1):
+#         if i % 2 == 0:
+#            print(i**3)
 
-show_cubes_of_numbers(1, 6)
+# show_cubes_of_numbers(1, 6)
