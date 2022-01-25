@@ -316,14 +316,53 @@
 
 # 45. Показать числа Фибоначчи
 
+# def fibo_numbers(n):
+#     ls = [0,1]
+#     for i in range(2,n):
+#         ls.append(ls[i-2] + ls[i-1])
+#     return ls
 
+# print(fibo_numbers(20))
 
 # 46. Написать программу масштабирования фигуры
-# ```
-# Тут для тех кто далеко улетел, чтобы задавались вершины фигуры списком (одной строкой)
-# например: "(0,0) (2,0) (2,2) (0,2)"
-# коэффициент масштабирования k задавался отдельно - 2 или 4 или 0.5
-# В результате показать координаты, которые получатся.
-# при k = 2 получаем "(0,0) (4,0) (4,4) (0,4)"
-# ```
+
+# def enter_num(phrase):
+#     while True:
+#         try:
+#             num = int(input(phrase))
+#             return num
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
+
+# def enter_coordinates(phrase):
+#     while True:
+#         coord = input(phrase).split(",")
+#         if len(coord) == 2:
+#             try:
+#                 for x in coord:
+#                     coord[coord.index(x)] = float(x)
+#                 return coord
+#             except ValueError:
+#                 print("Something is wrong, try one more time!")
+
+# def calculate_scale(ls, k):
+#     for i in ls:
+#         ls[ls.index(i)] *= k
+#     return ls
+
+# def main():
+#     ls = []
+#     x = enter_num("How many points is in figure: ")
+#     for i in range(x):
+#         ls += enter_coordinates("Enter x, y point coordinates separated by comma: ")
+#     k = enter_num("Enter zoom factor: ")
+#     print(f"New coordinates: {calculate_scale(ls, k)}")
+
+# main()
+
 # 47. Написать программу копирования массива
+
+ls1 = [4,5,6]
+ls2 = ls1.copy()
+print(ls2)
+
