@@ -15,23 +15,85 @@
 # 49. Показать двумерный массив размером m×n заполненный вещественными числами
 # from random import random
 
+
 # def generate_2D_list(m,n):
 #     return [[round(random()*10, 2) for i in range(n)] for i in range(m)]
+
 
 # def main():
 #     ls = generate_2D_list(3,5)
 #     for i in ls:
 #         print(i)
 
+
 # main()
 
 # 50. В двумерном массиве n×k заменить четные элементы на противоположные
 
+# import my_box
 
 
-# 51. Задать двумерный массив следующим правилом: Aₘₙ = m+n
+# def change_elements(ls):
+#     for i in range(len(ls)):
+#         for j in range(len(ls[i])):
+#             if ls[i][j] % 2 == 0:
+#                 ls[i][j] *= -1
+#     return ls
+
+
+# def main():
+#     n = my_box.enter_num("Enter number of rows: ")
+#     k = my_box.enter_num("Enter number of colomns: ")
+#     ls = my_box.generate_2D_int_list(n, k)
+#     print("Start list: ")
+#     my_box.print_2D_list(ls)
+#     print()
+#     print("Changed list: ")
+#     my_box.print_2D_list(change_elements(ls))
+
+
+# main()
+
+# 51. Задать двумерный массив следующим правилом: arr[m,n] = m+n
+
+# import my_box
+
+
+# def generate_2D_int_list(m,n):
+#     return [[i+j for i in range(n)] for j in range(m)]
+
+# my_box.print_2D_list(generate_2D_int_list(3,3))
+
 # 52. В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты
-# 53. В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет
+
+# import my_box
+
+
+# def change_elements(ls):
+#     for i in range(0, len(ls), 2):
+#         for j in range(0, len(ls[i]), 2):
+#             ls[i][j] **= 2
+#     return ls
+
+
+# def main():
+#     n = my_box.enter_num("Enter number of rows: ")
+#     k = my_box.enter_num("Enter number of colomns: ")
+#     ls = my_box.generate_2D_int_list(n, k)
+#     print("Start list: ")
+#     my_box.print_2D_list(ls)
+#     print()
+#     print("Changed list: ")
+#     my_box.print_2D_list(change_elements(ls))
+
+
+# main()
+
+# 53. В двумерном массиве показать позиции числа, заданного пользователем 
+# или указать, что такого элемента нет
+
+
+
 # 54. В матрице чисел найти сумму элементов главной диагонали
 # 55. Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
 # 56. Написать программу, которая обменивает элементы первой строки и последней строки
