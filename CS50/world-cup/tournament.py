@@ -5,29 +5,35 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000
+N = 10000
 
 
-def main():
+def main(a):
 
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
-
     teams = []
     # TODO: Read teams into memory from file
     with open(sys.argv[1], 'r') as file:
-        tur_table = csv.DictReader(file)
-        for row in tur_table:
-            teams.append(row["team"])
+        reader = csv.DictReader(file)
+        for team in reader:
+            team["rating"] = int(team["rating"])
+            teams.append(team)  
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+    for i in range(a):
+        winner = simulate_tournament(teams)
+        if winner in counts:
+            counts[winner] += 1
+        else:
+            counts[winner] = 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+        print(f"{team}: {counts[team] * 100 / a}% chance of winning")
 
 
 def simulate_game(team1, team2):
@@ -56,8 +62,9 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     while len(teams) > 1:
-        simulate_round(teams)
+        teams = simulate_round(teams)
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
-    main()
+    main(N)
