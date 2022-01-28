@@ -17,3 +17,14 @@ def enter_num(phrase):
 def print_2D_list(ls):
     for i in ls:
         print(i)
+
+
+
+def int_from_txt_to_list(filename):
+    with open(filename,'r') as file:
+        ls = [line.rstrip() for line in file.readlines()]
+    list = []
+    for i in ls:
+        if i.isdecimal():
+            list.append(int(i))
+    return list
