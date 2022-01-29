@@ -13,5 +13,6 @@
 #         l.append(i)
 
 # print(l)
+import time
 
-
+print(type(str(time.time())))

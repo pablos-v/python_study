@@ -70,38 +70,51 @@
 # Найти произведение элементов на указанных позициях. Позиции хранятся
 # в файле file.txt в одной строке одно число
 
-from random import randint
-import my_box
+# from random import randint
+# import my_box
 
 
-def create_list(N):
-    return [randint(-N, N) for i in range(N)]
+# def create_list(N):
+#     return [randint(-N, N) for i in range(N)]
 
 
-def multiply(list, elements):
-    result = 1
-    for i in range(len(list)):
-        if i in elements:
-            result *= list[i]
-    return result
+# def multiply(list, elements):
+#     result = 1
+#     for i in range(len(list)):
+#         if i in elements:
+#             result *= list[i]
+#     return result
 
 
-def main(N):
-    list = create_list(N)
-    elements = my_box.int_from_txt_to_list('file.txt')
-    print("Given list:", list)
-    print("Element indexes to multiply:", elements)
-    print("Multiplication result:", multiply(list, elements))
+# def main(N):
+#     list = create_list(N)
+#     elements = my_box.int_from_txt_to_list('file.txt')
+#     print("Given list:", list)
+#     print("Element indexes to multiply:", elements)
+#     print("Multiplication result:", multiply(list, elements))
 
 
-main(10)
+# main(10)
 
 # 18 Реализовать алгоритм перемешивания списка.
 
 
+
 # 19 Реализовать алгоритм задания случайных чисел.
 # Без использования встроенного генератора псевдослучайных чисел
+import time
 
+def random_int_of_time():
+    ls = []
+    s = str(time.time())
+    for i in s:
+        if i.isdecimal():
+            ls.append(int(i))
+    return sum(ls)%10
+
+for i in range(10):
+    print(random_int_of_time(), end = " ")
+    time.sleep(0.02)
 
 # 20 Определить, присутствует ли в заданном списке строк, некоторое число
 # 21 Определить, позицию второго вхождения строки в списке либо сообщить, что его нет.
