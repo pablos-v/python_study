@@ -1,18 +1,18 @@
 
 
-# a = "file.txt"
 
 
-# with open(a,'r') as file:
-#     ls = file.readlines()
+from random import randint
 
-# ls = [line.rstrip() for line in ls]
-# l = []
-# for i in ls:
-#     if i.isdecimal():
-#         l.append(i)
 
-# print(l)
-import time
+def main():
+    ls = random_list(6)
+    print(ls)
+    print(sum(i for i in ls[0:len(ls):2]))
 
-print(type(str(time.time())))
+
+def random_list(n):
+    return [randint(-9, 9) for x in range(n)]
+
+
+main()

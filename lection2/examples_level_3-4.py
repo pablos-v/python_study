@@ -97,29 +97,104 @@
 # main(10)
 
 # 18 Реализовать алгоритм перемешивания списка.
+# import random
 
 
+# def mixed_list(ls):
+#     for i in range(len(ls)):
+#         temp = 0
+#         position = random.randint(i, len(ls)-1)
+#         temp = ls[i]
+#         ls[i] = ls[position]
+#         ls[position] = temp
+#     return ls
+
+
+# def main():
+#     ls = [x for x in range(10)]
+#     print(ls)
+#     print(mixed_list(ls))
+
+
+# main()
 
 # 19 Реализовать алгоритм задания случайных чисел.
 # Без использования встроенного генератора псевдослучайных чисел
-import time
+# import time
 
-def random_int_of_time():
-    ls = []
-    s = str(time.time())
-    for i in s:
-        if i.isdecimal():
-            ls.append(int(i))
-    return sum(ls)%10
+# def random_int_of_time():
+#     ls = []
+#     s = str(time.time())
+#     for i in s:
+#         if i.isdecimal():
+#             ls.append(int(i))
+#     return sum(ls)%10
 
-for i in range(10):
-    print(random_int_of_time(), end = " ")
-    time.sleep(0.02)
+# for i in range(10):
+#     print(random_int_of_time(), end = " ")
+#     time.sleep(0.02)
 
 # 20 Определить, присутствует ли в заданном списке строк, некоторое число
+
+# def main():
+#     ls = ['Given 1', 'list', 'of', '5', 'values']
+#     print(is_num_in_list(ls, 1))
+
+
+# def is_num_in_list(ls, num):
+#     list = []
+#     for s in ls:
+#         for i in s:
+#             if i.isdecimal():
+#                 list.append(int(i))
+#     return num in list
+
+
+# main()
+
 # 21 Определить, позицию второго вхождения строки в списке либо сообщить, что его нет.
+
+# def main(s):
+#     ls = ['Given 1', 'list', 'of', '5', '5', 'values', 'values', 'values']
+#     find_str_in_list(ls, s)
+
+
+# def find_str_in_list(ls, s):
+#     count = []
+#     for i in ls:
+#         if i == s:
+#             count.append(ls.index(i))
+#     if len(count) >= 2:
+#         print(f"We meet string '{s}' second time at position {count[1]} of given list.")
+#     else:
+#         print(f"We can`t see string '{s}' twice in given list.")
+
+
+# main('values')
+
 # 22 Найти сумму чисел списка стоящих на нечетной позиции
-# 23 Найти произведение пар чисел в списке. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; [2, 3, 5, 6] => [12, 15]
+
+# from random import randint
+
+
+# def main():
+#     ls = random_list(6)
+#     print(ls)
+#     print(sum(i for i in ls[0:len(ls):2]))
+
+
+# def random_list(n):
+#     return [randint(-9, 9) for x in range(n)]
+
+
+# main()
+
+# 23 Найти произведение пар чисел в списке. Парой считаем первый и последний
+# элемент, второй и предпоследний и т.д.
+# Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; [2, 3, 5, 6] => [12, 15]
+
+
+
 # 24 В заданном списке вещественных чисел найдите разницу между максимальным и минимальным значением дробной части элементов. Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 # 25 Написать программу преобразования десятичного числа в двоичное
 # 26 Дано число. Составить список чисел Фибоначчи, в том числе для отрицательных индексов
