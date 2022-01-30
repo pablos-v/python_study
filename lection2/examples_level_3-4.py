@@ -193,10 +193,49 @@
 # элемент, второй и предпоследний и т.д.
 # Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; [2, 3, 5, 6] => [12, 15]
 
+# from random import randint
 
 
-# 24 В заданном списке вещественных чисел найдите разницу между максимальным и минимальным значением дробной части элементов. Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+# def random_list(n):
+#     return [randint(1, 9) for x in range(n)]
+
+
+# def multiply_pairs_in_list(ls):
+#     if len(ls) % 2 == 1:
+#         return [ls[i] * ls[-1 - i] for i in range(len(ls) // 2 + 1)]
+#     else:
+#         return [ls[i] * ls[-1 - i] for i in range(len(ls) // 2)]
+
+
+# def main():
+#     ls = random_list(5)
+#     print("Given list:", ls)
+#     print("List of multiplied values:", multiply_pairs_in_list(ls))
+
+# main()
+
+# 24 В заданном списке вещественных чисел найдите разницу между максимальным и
+# минимальным значением дробной части элементов. Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+# from random import random
+
+
+# def frac_parts_diff(ls):
+#     ls_fract_parts = [round(i % 1, 2) for i in ls]
+#     return round(max(ls_fract_parts) - min(ls_fract_parts), 2)
+
+
+# def main():
+#     ls = [round(random()*10, 2) for i in range(5)]
+#     print(
+#         f"In the given list: {ls}\nDifference between max and min fractial parts is: {frac_parts_diff(ls)}")
+
+
+# main()
+
 # 25 Написать программу преобразования десятичного числа в двоичное
+
+
+
 # 26 Дано число. Составить список чисел Фибоначчи, в том числе для отрицательных индексов
 # 27 Строка содержит набор чисел. Показать большее и меньшее число
 # 28 Найти корни квадратного уравнения Ax² + Bx + C = 0
@@ -206,3 +245,5 @@
 # 30 Вычислить число  c заданной точностью d Пример: при d = 0.001,  = 3.141. 10-1d10-10
 
 # 31 Составить список простых множителей натурального числа N
+
+
