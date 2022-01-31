@@ -1,7 +1,8 @@
 
 def main(n):
     fibo(n, 0, 1)
-    print(ls)                                   
+    nego_fibo(n, 0, 1)
+    print(ls)                                  
 
 
 def fibo(n, a, b):
@@ -14,10 +15,11 @@ def fibo(n, a, b):
 
 def nego_fibo(n, a, b):
     if n <= 1:
-        return a - b
+        return b - a
     else:
-        ls.insert(0, a - b)
-        return nego_fibo(n - 1, b, b - a)
+        ls.insert(0, b - a)
+        return nego_fibo(n - 1, b - a, a)
+
 
 ls = [0, 1]
 main(10)
