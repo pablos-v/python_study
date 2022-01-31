@@ -28,3 +28,12 @@ def int_from_txt_to_list(filename):
         if i.isdecimal():
             list.append(int(i))
     return list
+
+
+def enter_float_num(phrase):
+    while True:
+        try:
+            num = float(input(phrase))
+            return num
+        except ValueError:
+            print("Something is wrong, try one more time!")

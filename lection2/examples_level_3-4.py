@@ -340,8 +340,35 @@
 #       Математикой
 #       Используя дополнительные библиотеки*
 
+import my_box
 
 
+def main():
+    print("For the equation Ax² + Bx + C = 0")
+    a = my_box.enter_float_num("Enter A:")
+    b = my_box.enter_float_num("Enter B:")
+    c = my_box.enter_float_num("Enter C:")
+    discriminant(a, b, c)
+
+
+def discriminant(a, b, c):
+    D = b ** 2 - 4 * a * c
+    if D < 0:
+        print("There is no root of the equation.")
+    if D == 0:
+        print(f"The root of the equation is {root_of(a, b, D, 1)}")
+    if D > 0:
+        print(f"The roots of the equation are {root_of(a, b, D, 2)}")
+
+
+def root_of(a, b, D, f):
+    if f == 1:
+        return (-b + (D ** 0.5)) / 2 * a
+    if f == 2:
+        return (-b + (D ** 0.5)) / 2 * a, (-b - (D ** 0.5)) / 2 * a
+
+
+main()
 
 # 29 Найти НОК двух чисел
 # 30 Вычислить число  c заданной точностью d Пример: при d = 0.001,  = 3.141. 10-1d10-10
