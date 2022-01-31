@@ -301,7 +301,20 @@
 
 # 27 Строка содержит набор чисел. Показать большее и меньшее число
 
+# def convert_to_int_list(ls):
+#     ls = ls.split(' ')
+#     ls = [int(i) for i in ls]
+#     return ls
 
+
+# def main():
+#     ls = '55 88 8 53 1 4 2'
+#     print(ls)
+#     ls = convert_to_int_list(ls)
+#     print(f'Maximum value in list: {max(ls)}, minimum value: {min(ls)}')
+
+
+# main()
 
 # 28 Найти корни квадратного уравнения Ax² + Bx + C = 0
 #       Математикой
