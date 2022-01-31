@@ -1,11 +1,23 @@
 
+def main(n):
+    fibo(n, 0, 1)
+    print(ls)                                   
 
 
-
-def Fibo( n, a, b):
-    if n <= 1:
-        print(a + b)
+def fibo(n, a, b):
+    if n <= 2:
+        return a + b
     else:
-        print(f"{a + b} {Fibo(n - 1, b, a + b)}")
+        ls.append(a + b)
+        return fibo(n - 1, b, a + b)
 
-Fibo(4, 0, 1)
+
+def nego_fibo(n, a, b):
+    if n <= 1:
+        return a - b
+    else:
+        ls.insert(0, a - b)
+        return nego_fibo(n - 1, b, b - a)
+
+ls = [0, 1]
+main(10)

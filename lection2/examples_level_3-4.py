@@ -21,7 +21,17 @@
 #         N = dict[N]
 #     return dict
 
-# print(collatz_sequence(3))
+# print(collatz_sequence(6))
+
+# правленная задача: Для натурального n создать словарь индекс-значение, состоящий 
+# из элементов последовательности 3n + 1.
+# Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
+
+# def create_dict(n):
+#     return dict({i : 3 * i + 1 for i in range(1, n + 1)})
+
+
+# print(create_dict(6))
 
 # 13 Пользователь задаёт две строки. Определить количество количество
 # вхождений одной строки в другой.
@@ -246,23 +256,28 @@
 
 # 26 Дано число. Составить список чисел Фибоначчи, в том числе для отрицательных индексов
 
-def fibo(n):
-    ls = [0, 1]
-    for i in range(1, n - 1):
-        ls.append(ls[i] + ls[i - 1])
-    return ls
+# def fibo(n):
+#     ls = [0, 1]
+#     for i in range(1, n - 1):
+#         ls.append(ls[i] + ls[i - 1])
+#     return ls
 
 
-def nega_fibo(n):
-    row = fibo(n)
-    for i in range(n-1):
-        row.insert(0, row[1] - row[0])
-    return row
+# def nega_fibo(n):
+#     row = fibo(n)
+#     for i in range(n-1):
+#         row.insert(0, row[1] - row[0])
+#     return row
 
 
-print(nega_fibo(10))
+# print(nega_fibo(6))
+
+
 
 # 27 Строка содержит набор чисел. Показать большее и меньшее число
+
+
+
 # 28 Найти корни квадратного уравнения Ax² + Bx + C = 0
 #       Математикой
 #       Используя дополнительные библиотеки*
