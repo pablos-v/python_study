@@ -344,31 +344,29 @@
 
 
 # def main():
-#     print("For the equation Ax² + Bx + C = 0")
+#     print("For the equation Ax² + Bx + C = 0:")
 #     a = my_box.enter_float_num("Enter A:")
 #     b = my_box.enter_float_num("Enter B:")
 #     c = my_box.enter_float_num("Enter C:")
+#     res = root_of(a, b, c)
+#     if res[0] == 1:
+#         print(f"The root of the equation is {res[1]}")
+#     if res[0] == 2:
+#         print("There is no root of the equation.")
+#     if res[0] == 3:
+#         print(f"The roots of the equation are {res[1], res[2]}")
+        
+
+# def root_of(a, b, c):
 #     if a == 0:
-#         print(f"The root of the equation is {-c / b}")
-#     else:
-#         discriminant(a, b, c)
-
-
-# def discriminant(a, b, c):
+#         return [1, -c / b]
 #     D = b ** 2 - 4 * a * c
 #     if D < 0:
-#         print("There is no root of the equation.")
+#         return [2]
 #     if D == 0:
-#         print(f"The root of the equation is {root_of(a, b, D, 1)}")
+#         return [1, (-b + (D ** 0.5)) / 2 * a]
 #     if D > 0:
-#         print(f"The roots of the equation are {root_of(a, b, D, 2)}")
-
-
-# def root_of(a, b, D, f):
-#     if f == 1:
-#         return (-b + (D ** 0.5)) / 2 * a
-#     if f == 2:
-#         return (-b + (D ** 0.5)) / 2 * a, (-b - (D ** 0.5)) / 2 * a
+#         return [3, (-b + (D ** 0.5)) / 2 * a, (-b - (D ** 0.5)) / 2 * a]
 
 
 # main()
