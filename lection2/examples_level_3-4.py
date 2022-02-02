@@ -371,13 +371,57 @@
 
 # main()
 
-# 29 Найти НОК двух чисел (можно 3 и более, просто попарно делать)
+# 29 Найти НОК двух чисел 
+# (можно 3 и более чисел, просто попарно делать)*
 
-# Алгоритм Евклида
-# находим нод, потом а * в / нод
-# нод: большее / меньшее = остаток, меньшее / остаток = остаток2.....
-# когда меньшее / остатокN == 0: нод = остатокN
+# with Euclid's algorithm for 2 numbers
+
+# def main(a, b):
+#     result = int(a * b / find_divisor(a, b))
+#     print(result)
+
+
+# def find_divisor(a, b):
+#     if a < b: 
+#         a, b = b, a
+#     while a % b:
+#         c = b
+#         b = a % b
+#         a = c
+#     return b
+
+
+# main(15, 213)
+
+
+# same for 3+ numbers
+
+# import my_box
+
+
+# def main():
+#     ls = my_box.enter_list_int_nums(2)
+#     while len(ls) > 1:
+#         a = ls.pop()
+#         b = ls.pop()
+#         min_common_divisor = int(a * b / find_divisor(a, b))
+#         ls.append(min_common_divisor)
+#     print(ls[0])
+
+
+# def find_divisor(a, b):
+#     if a < b:
+#         a, b = b, a
+#     while a % b:
+#         temp = b
+#         b = a % b
+#         a = temp
+#     return b
+
+
+# main()
 
 # 30 Вычислить число  c заданной точностью d Пример: look in file
+
 
 # 31 Составить список простых множителей натурального числа N

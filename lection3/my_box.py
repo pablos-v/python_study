@@ -1,7 +1,7 @@
 import random
 
 
-def generate_2D_int_list(m,n):
+def generate_2D_int_list(m, n):
     return [[random.randint(-9, 9) for i in range(n)] for i in range(m)]
 
 
@@ -12,7 +12,6 @@ def enter_num(phrase):
             return num
         except ValueError:
             print("Something is wrong, try one more time!")
-
 
 
 def enter_list_int_nums(n):
@@ -30,9 +29,8 @@ def print_2D_list(ls):
         print(i)
 
 
-
 def int_from_txt_to_list(filename):
-    with open(filename,'r') as file:
+    with open(filename, 'r') as file:
         ls = [line.rstrip() for line in file.readlines()]
     list = []
     for i in ls:
