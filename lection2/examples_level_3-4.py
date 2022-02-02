@@ -355,7 +355,7 @@
 #         print("There is no root of the equation.")
 #     if res[0] == 3:
 #         print(f"The roots of the equation are {res[1], res[2]}")
-        
+
 
 # def root_of(a, b, c):
 #     if a == 0:
@@ -371,7 +371,7 @@
 
 # main()
 
-# 29 Найти НОК двух чисел 
+# 29 Найти НОК двух чисел
 # (можно 3 и более чисел, просто попарно делать)*
 
 # with Euclid's algorithm for 2 numbers
@@ -382,7 +382,7 @@
 
 
 # def find_divisor(a, b):
-#     if a < b: 
+#     if a < b:
 #         a, b = b, a
 #     while a % b:
 #         c = b
@@ -421,7 +421,26 @@
 
 # main()
 
-# 30 Вычислить число  c заданной точностью d Пример: look in file
+# 30 Вычислить число Пи c заданной точностью d Пример: look in file
+import math
 
+
+def main(d):
+    print(pi_accuracy(accuracy_count(d)))
+
+
+def pi_accuracy(n):
+    return ((math.pi * 10 ** n) // 1) / 10 ** n
+
+
+def accuracy_count(x):
+    count = 0
+    while x != 1:
+        x *= 10
+        count += 1
+    return count
+
+
+main(0.001)
 
 # 31 Составить список простых множителей натурального числа N
