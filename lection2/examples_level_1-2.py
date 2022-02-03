@@ -2,12 +2,11 @@
 
 # def is_square(a, b):
 #     if a < b:
-#         return is_square(b, a)
-#     else:
-#         return a == b * b
+#         a, b = b, a
+#     return a == b * b
 
 
-# print(is_square(4,16))
+# print(is_square(16, 4))
 
 # 2 Найти максимальное из пяти чисел
 
