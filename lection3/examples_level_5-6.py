@@ -15,28 +15,24 @@
 # import random
 
 
-# def koef(k):
-#     return [random.randint(0,100) for i in range(k + 1)]
-
-
 # def el(li, k, l):
 #     res_list = ''
 #     for m in range(0, l):
-#         if k == 1: res_list += (f'{li[m]}x + ')
-#         elif k == 0: res_list += (f'{li[m]} = 0')
+#         if k == 1: 
+#             res_list += (f'{li[m]}x + ')
+#         elif k == 0: 
+#             res_list += (f'{li[m]} = 0')
 #         else:
 #             res_list += (f'{li[m]}x^{k} + ')
 #         k -= 1
 #     return res_list
 
-# def main():
-#     li = koef(3)
-#     result = el(li, 3, len(li))
-
+# def main(k):
+#     li = [random.randint(0,100) for i in range(k + 1)]
 #     with open ("33.txt", 'w') as file:
-#         file.write(result)
+#         file.write(el(li, 3, len(li)))
 
-# main()
+# main(3)
 
 # 34 Даны два файла в каждом из которых находится запись многочлена. 
 # Сформировать файл содержащий сумму многочленов.
@@ -48,7 +44,9 @@
 
 # def main():
 #     with open('35.txt') as file:
-#         A = [int(x) for x in file.read().split()]
+#         # A = [int(x) for x in file.read().split()]
+#         A = list(map(int, file.read().split()))
+
 #     print(finder(A))
 
 

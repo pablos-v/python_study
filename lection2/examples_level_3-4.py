@@ -446,5 +446,46 @@
 
 # 31 Составить список простых множителей натурального числа N
 
+import my_box
 
 
+def main():
+    N = my_box.enter_num("Enter prime number: ")
+    ls = prime_multipliers_list(N)
+    print(f"The Prime Factors of number {N} are: {ls}")
+
+
+def prime_num_list():
+    length = len(prime_nums) + 10
+    for i in range(prime_nums[-1]+2, prime_nums[-1]*10, 2):
+        if len(prime_nums) == length:
+            break
+        if (i > 10) and (i % 10 == 5):
+            continue
+        for j in prime_nums:
+            if j*j-1 > i:
+                prime_nums.append(i)
+                break
+            if (i % j == 0):
+                break
+        else:
+            prime_nums.append(i)
+
+
+def prime_multipliers_list(x):
+    ls = []
+    i = 0
+    while x != 1:
+        if x % prime_nums[i] == 0:
+            ls.append(prime_nums[i])
+            x /= prime_nums[i]
+            i = 0
+        else:
+            if i == len(prime_nums)-1:
+                prime_num_list()
+            i += 1
+    return ls
+
+
+prime_nums = [2, 3, 5]
+main()
