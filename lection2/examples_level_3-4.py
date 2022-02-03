@@ -422,25 +422,29 @@
 # main()
 
 # 30 Вычислить число Пи c заданной точностью d Пример: look in file
-import math
+
+# import math
 
 
-def main(d):
-    print(pi_accuracy(accuracy_count(d)))
+# def main(d):
+#     print(pi_accuracy(accuracy_count(d)))
 
 
-def pi_accuracy(n):
-    return ((math.pi * 10 ** n) // 1) / 10 ** n
+# def pi_accuracy(n):
+#     return ((math.pi * 10 ** n) // 1) / 10 ** n
 
 
-def accuracy_count(x):
-    count = 0
-    while x != 1:
-        x *= 10
-        count += 1
-    return count
+# def accuracy_count(x):
+#     count = 0
+#     while x != 1:
+#         x *= 10
+#         count += 1
+#     return count
 
 
-main(0.001)
+# main(0.001)
 
 # 31 Составить список простых множителей натурального числа N
+
+
+
