@@ -78,27 +78,24 @@
 # Пример: [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3, 4, 6, 7]
 
 def compare(ls):
-    final_list = []
+    res = []
     for i in range(1, len(ls)-1):
-        lst = [ls[0]]
+        temp = [ls[0]]
         for e in range(i, len(ls)):
-            if ls[e] > lst[-1]:
-                lst.append(ls[e])
-        final_list.append(lst)
-    return final_list
+            if ls[e] > temp[-1]:
+                temp.append(ls[e])
+        res.append(temp)
+    return res
 
 
 def find_longest(final):
-    longest = max(len(i) for i in final)
     for k in final:
-        if len(k) == longest:
+        if len(k) == max(len(i) for i in final):
             return final[final.index(k)]
 
 
-def main(li):
-    final = compare(li)
-    longest = find_longest(final)
-    print(final)
+def main(given_list):
+    longest = find_longest(compare(given_list))
     print(longest)
 
 
