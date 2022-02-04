@@ -38,6 +38,7 @@
 # Сформировать файл содержащий сумму многочленов.
 
 
+
 # 35 В файле находится N натуральных чисел, записанных через пробел. Среди чисел не хватает одного,
 # чтобы выполнялось условие A[i] - 1 = A[i-1]. Найти его.
 
@@ -77,32 +78,42 @@
 # удовлетворяющих условию предыдущей задачи.
 # Пример: [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3, 4, 6, 7]
 
-def compare(ls):
-    res = []
-    for i in range(1, len(ls)-1):
-        temp = [ls[0]]
-        for e in range(i, len(ls)):
-            if ls[e] > temp[-1]:
-                temp.append(ls[e])
-        res.append(temp)
-    return res
+# def compare(ls):
+#     res = []
+#     for i in range(1, len(ls)-1):
+#         temp = [ls[0]]
+#         for e in range(i, len(ls)):
+#             if ls[e] > temp[-1]:
+#                 temp.append(ls[e])
+#         res.append(temp)
+#     return res
 
 
-def find_longest(final):
-    for k in final:
-        if len(k) == max(len(i) for i in final):
-            return final[final.index(k)]
+# def find_longest(final):
+#     for k in final:
+#         if len(k) == max(len(i) for i in final):
+#             return final[final.index(k)]
 
 
-def main(given_list):
-    longest = find_longest(compare(given_list))
-    print(longest)
+# def main(given_list):
+#     longest = find_longest(compare(given_list))
+#     print(longest)
 
 
-main([1, 5, 2, 3, 4, 6, 1, 7])
+# main([1, 5, 2, 3, 4, 6, 1, 7])
 
 # 38 Напишите программу, удаляющую из текста все слова содержащие "абв".
 
+def delete_phrase(s):
+    start_list = list(s.split())
+    filtered_list = list(filter(lambda string: not 'абв' in string, start_list))
+    return ' '.join(filtered_list)
+
+def main(s):
+    res = delete_phrase(s)
+    print(res)
+
+main('абва авба быва беба глабвас')
 
 # 39 Помните игру с конфетами из модуля "Математика и Информатика"?
 # Создайте такую игру для игры человек против человека
@@ -125,8 +136,9 @@ main([1, 5, 2, 3, 4, 6, 1, 7])
 #   a входные и выходные данные хранятся в отдельных файлах
 
 
-# Дана последовательность чисел. Получить список уникальных элементов заданной последовательности.
-# Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
+# 43 Дана последовательность чисел. Получить список уникальных элементов заданной 
+# последовательности. Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
+
 
 
 # 44 Секретная задача
