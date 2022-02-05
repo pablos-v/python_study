@@ -119,6 +119,17 @@
 #   a Добавьте игру против бота
 #   b Подумайте как наделить бота "интеллектом"
 
+#  суть игры: на столе 21 спичка, за ход можно взять от 1 до 4 спичек
+# побеждает тот, кто забрал последнюю
+
+# def запрос кол-ва игроков
+
+# def если 1 игрок то с ботом, 2 с человеком
+    # запрос на повторение игры
+
+# def игра с человеком
+
+# def игра с ботом
 
 # 40 Вы когда-нибудь играли в игру "Крестики-нолики"? Попробуйте создать её.
 
@@ -138,27 +149,41 @@
 # 43 Дана последовательность чисел. Получить список уникальных элементов заданной
 # последовательности. Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
 
-def main(ls):
-    res = find_uniq_nums(ls)
-    print(res)
+# def main(ls):
+#     res = find_uniq_nums(ls)
+#     print(res)
 
 
-def find_uniq_nums(ls):
-    all_nums = list(set(ls))  # form list of all numbers without repeats
-    for i in all_nums:  # leave only repeating nums in ls
-        ls.remove(i)
-    return list(set(ls) ^ set(all_nums))
+# def find_uniq_nums(ls):
+#     all_nums = list(set(ls))  # form list of all numbers without repeats
+#     for i in all_nums:  # leave only repeating nums in ls
+#         ls.remove(i)
+#     return list(set(ls) ^ set(all_nums))
 
 
-main([1, 2, 3, 5, 1, 5, 3, 10])
+# main([1, 2, 3, 5, 1, 5, 3, 10])
 
-# simplified
+# simplified_0
 
-def main_s(lst):
-    res = [i for i in lst if i not in lst[lst.index(i)+1:]]
-    print(res)
+# def main_s(lst):
+#     res = [i for i in lst if i not in lst[lst.index(i)+1:]]
+#     print(res)
 
 
-main_s([1, 2, 3, 5, 1, 5, 3, 10])
+# main_s([1, 2, 3, 5, 1, 5, 3, 10])
+
+# simplified_1
+
+# def main_s_1(ls):
+#     ls = [i for i in ls if ls.count(i) == 1]
+#     print(ls)
+
+
+# main_s_1([1, 2, 3, 5, 1, 5, 3, 10])
+
+# simplified_2
+
+# a = lambda ls:[i for i in ls if ls.count(i) == 1]
+# print(a([1, 2, 3, 5, 1, 5, 3, 10]))
 
 # 44 Секретная задача
