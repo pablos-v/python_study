@@ -38,7 +38,6 @@
 # Сформировать файл содержащий сумму многочленов.
 
 
-
 # 35 В файле находится N натуральных чисел, записанных через пробел. Среди чисел не хватает одного,
 # чтобы выполнялось условие A[i] - 1 = A[i-1]. Найти его.
 
@@ -104,16 +103,16 @@
 
 # 38 Напишите программу, удаляющую из текста все слова содержащие "абв".
 
-def delete_phrase(s):
-    start_list = list(s.split())
-    filtered_list = list(filter(lambda string: not 'абв' in string, start_list))
-    return ' '.join(filtered_list)
+# def delete_phrase(s):
+#     start_list = list(s.split())
+#     filtered_list = list(filter(lambda string: not 'абв' in string, start_list))
+#     return ' '.join(filtered_list)
 
-def main(s):
-    res = delete_phrase(s)
-    print(res)
+# def main(s):
+#     res = delete_phrase(s)
+#     print(res)
 
-main('абва авба быва беба глабвас')
+# main('абва авба быва беба глабвас')
 
 # 39 Помните игру с конфетами из модуля "Математика и Информатика"?
 # Создайте такую игру для игры человек против человека
@@ -136,9 +135,30 @@ main('абва авба быва беба глабвас')
 #   a входные и выходные данные хранятся в отдельных файлах
 
 
-# 43 Дана последовательность чисел. Получить список уникальных элементов заданной 
+# 43 Дана последовательность чисел. Получить список уникальных элементов заданной
 # последовательности. Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
 
+def main(ls):
+    res = find_uniq_nums(ls)
+    print(res)
 
+
+def find_uniq_nums(ls):
+    all_nums = list(set(ls))  # form list of all numbers without repeats
+    for i in all_nums:  # leave only repeating nums in ls
+        ls.remove(i)
+    return list(set(ls) ^ set(all_nums))
+
+
+main([1, 2, 3, 5, 1, 5, 3, 10])
+
+# simplified
+
+def main_s(lst):
+    res = [i for i in lst if i not in lst[lst.index(i)+1:]]
+    print(res)
+
+
+main_s([1, 2, 3, 5, 1, 5, 3, 10])
 
 # 44 Секретная задача
