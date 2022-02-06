@@ -121,15 +121,34 @@
 
 #  суть игры: на столе 21 спичка, за ход можно взять от 1 до 4 спичек
 # побеждает тот, кто забрал последнюю
+import my_box
 
-# def запрос кол-ва игроков
 
-# def если 1 игрок то с ботом, 2 с человеком
-    # запрос на повторение игры
+def main():
+    print('There are 21 matches on the table, you can take from 1 to 4 matches per turn.\nLast hand wins.')
+    if game_type() == 1:
+        play_bot()
+    else:
+        play_friend()
+    main() if play_again() else exit()
 
-# def игра с человеком
 
-# def игра с ботом
+def game_type():
+    while True:
+        players = my_box.enter_num(
+            'There is two game options:\n1 - play with bot.\n2 - play with your friend.\nChoose option: ')
+        if 3 > players > 0:
+            return players
+
+
+def play_again():
+    return input('If you want play again, type "y", or anything else to exit.') == 'y'
+
+def play_bot():
+    
+
+def play_friend():
+
 
 # 40 Вы когда-нибудь играли в игру "Крестики-нолики"? Попробуйте создать её.
 
