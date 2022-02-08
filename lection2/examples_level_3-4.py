@@ -73,8 +73,11 @@
 #         ls.append((1+1/i)**i)
 #     return ls
 
+# def sum_sequence2(n):
+#     return [(1+1/i)**i for i in range(1,n+1)]
 
 # print(sum(sum_sequence(5)))
+# print(sum(sum_sequence2(5)))
 
 # 17 Задать список из N элементов, заполненных числами из [-N, N].
 # Найти произведение элементов на указанных позициях. Позиции хранятся

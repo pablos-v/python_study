@@ -143,98 +143,98 @@
 
 #  суть игры: на столе 21 спичка, за ход можно взять от 1 до 4 спичек
 # побеждает тот, кто забрал последнюю
-import my_box
-from random import randint
+# import my_box
+# from random import randint
 
 
-def main():
-    print('There are 21 matches on the table, you can take from 1 to 4 matches per turn.\n\
-Last hand wins.')
-    game_init()
-    main() if play_again() else exit()
+# def main():
+#     print('There are 21 matches on the table, you can take from 1 to 4 matches per turn.\n\
+# Last hand wins.')
+#     game_init()
+#     main() if play_again() else exit()
 
 
-def game_type():
-    while True:
-        players = my_box.enter_num('There is two game options:\n1 - play with bot.\n\
-2 - play with your friend.\nChoose option: ')
-        if 3 > players > 0:
-            return players
+# def game_type():
+#     while True:
+#         players = my_box.enter_num('There is two game options:\n1 - play with bot.\n\
+# 2 - play with your friend.\nChoose option: ')
+#         if 3 > players > 0:
+#             return players
 
 
-def play_again():
-    return input('If you want play again, type "y", or anything else to exit.') == 'y'
+# def play_again():
+#     return input('If you want play again, type "y", or anything else to exit.') == 'y'
 
 
-def game_init():
-    if game_type() == 1:
-        if play_bot():
-            print('You are winner! Congrats!')
-        else:
-            print('Bot wins. Game over.')
-    else:
-        player1 = input('Enter name of first player: ')
-        player2 = input('Enter name of second player: ')
-        if play_friend(player1, player2):
-            print(f'{player1} wins! Congrats!')
-        else:
-            print(f'{player2} wins! Congrats!')
+# def game_init():
+#     if game_type() == 1:
+#         if play_bot():
+#             print('You are winner! Congrats!')
+#         else:
+#             print('Bot wins. Game over.')
+#     else:
+#         player1 = input('Enter name of first player: ')
+#         player2 = input('Enter name of second player: ')
+#         if play_friend(player1, player2):
+#             print(f'{player1} wins! Congrats!')
+#         else:
+#             print(f'{player2} wins! Congrats!')
 
 
-def bot_logic(s):
-    if not s % 5:
-        return randint(1, 4)
-    else:
-        return s % 5
+# def bot_logic(s):
+#     if not s % 5:
+#         return randint(1, 4)
+#     else:
+#         return s % 5
 
 
-def move(s):
-    while True:
-        try:
-            num = int(input(s))
-            if 1 <= num <= 4:
-                return num
-            else:
-                print('You can take only 1, 2, 3 or 4 matches!!!')
-                continue
-        except ValueError:
-            print("Something is wrong, try one more time!")
+# def move(s):
+#     while True:
+#         try:
+#             num = int(input(s))
+#             if 1 <= num <= 4:
+#                 return num
+#             else:
+#                 print('You can take only 1, 2, 3 or 4 matches!!!')
+#                 continue
+#         except ValueError:
+#             print("Something is wrong, try one more time!")
 
 
-def play_bot():
-    print('You are playing with bot.')
-    bank = 21
-    player = randint(0, 1)
-    while bank > 0:
-        if player:
-            bank -= move(
-                f'It`s your move, player. {bank} matches left. How many will you take: ')
-            player = 0
-        else:
-            turn = bot_logic(bank)
-            bank -= turn
-            print(f'Bot`s move. Bot is taking {turn} matches.')
-            player = 1
-    return not player
+# def play_bot():
+#     print('You are playing with bot.')
+#     bank = 21
+#     player = randint(0, 1)
+#     while bank > 0:
+#         if player:
+#             bank -= move(
+#                 f'It`s your move, player. {bank} matches left. How many will you take: ')
+#             player = 0
+#         else:
+#             turn = bot_logic(bank)
+#             bank -= turn
+#             print(f'Bot`s move. Bot is taking {turn} matches.')
+#             player = 1
+#     return not player
 
 
-def play_friend(player1, player2):
-    bank = 21
-    player = randint(0, 1)
-    while bank > 0:
-        if player:
-            bank -= move(
-                f'It`s your move, {player1}. {bank} matches left. How many will you take: ')
-            player = 0
-        else:
-            turn = bot_logic(bank)
-            bank -= move(
-                f'It`s your move, {player2}. {bank} matches left. How many will you take: ')
-            player = 1
-    return not player
+# def play_friend(player1, player2):
+#     bank = 21
+#     player = randint(0, 1)
+#     while bank > 0:
+#         if player:
+#             bank -= move(
+#                 f'It`s your move, {player1}. {bank} matches left. How many will you take: ')
+#             player = 0
+#         else:
+#             turn = bot_logic(bank)
+#             bank -= move(
+#                 f'It`s your move, {player2}. {bank} matches left. How many will you take: ')
+#             player = 1
+#     return not player
 
 
-main()
+# main()
 
 # 40 Вы когда-нибудь играли в игру "Крестики-нолики"? Попробуйте создать её.
 
