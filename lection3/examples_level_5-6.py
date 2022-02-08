@@ -62,16 +62,38 @@
 # Пример: [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
 # Порядок элементов менять нельзя
 
-# def compare(ls):
-#     lst = [ls[0]]
-#     for i in ls:
-#         if i > lst[-1]:
-#             lst.append(i)
-#     return lst
+# def main(ls):
+#     if len(ls) < 1:
+#         print('No solutions.')
+#         exit()
+#     ans = data(ls)
+#     print(ans)
 
 
-# li = [1, 5, 2, 3, 4, 6, 1, 7]
-# print(compare(li))
+# def data(lst):
+#     start = not_last_min(lst)
+#     new_lst = [start]
+#     for i in lst[lst.index(start):]:
+#         if i > new_lst[-1]:
+#             new_lst.append(i)
+#     if len(new_lst) == 1:
+#         print('No solutions.')
+#         exit()
+#     return new_lst
+
+
+# def not_last_min(li):
+#     while min(li) == li[-2] >= li[-1]:
+#         if li.index(min(li)) == li.index(li[-1]):
+#             del li[-1]
+#         if len(li) == 1:
+#             print('No solutions.')
+#             exit()
+#     return min(li)
+
+
+# main([1, 5, 2, 3, 4, 6, 1, 7])
+
 
 # 37 Дан список чисел. Выделить среди них максимальное количество чисел,
 # удовлетворяющих условию предыдущей задачи.
@@ -122,21 +144,20 @@
 #  суть игры: на столе 21 спичка, за ход можно взять от 1 до 4 спичек
 # побеждает тот, кто забрал последнюю
 import my_box
+from random import randint
 
 
 def main():
-    print('There are 21 matches on the table, you can take from 1 to 4 matches per turn.\nLast hand wins.')
-    if game_type() == 1:
-        play_bot()
-    else:
-        play_friend()
+    print('There are 21 matches on the table, you can take from 1 to 4 matches per turn.\n\
+Last hand wins.')
+    game_init()
     main() if play_again() else exit()
 
 
 def game_type():
     while True:
-        players = my_box.enter_num(
-            'There is two game options:\n1 - play with bot.\n2 - play with your friend.\nChoose option: ')
+        players = my_box.enter_num('There is two game options:\n1 - play with bot.\n\
+2 - play with your friend.\nChoose option: ')
         if 3 > players > 0:
             return players
 
@@ -144,11 +165,76 @@ def game_type():
 def play_again():
     return input('If you want play again, type "y", or anything else to exit.') == 'y'
 
+
+def game_init():
+    if game_type() == 1:
+        if play_bot():
+            print('You are winner! Congrats!')
+        else:
+            print('Bot wins. Game over.')
+    else:
+        player1 = input('Enter name of first player: ')
+        player2 = input('Enter name of second player: ')
+        if play_friend(player1, player2):
+            print(f'{player1} wins! Congrats!')
+        else:
+            print(f'{player2} wins! Congrats!')
+
+
+def bot_logic(s):
+    if not s % 5:
+        return randint(1, 4)
+    else:
+        return s % 5
+
+
+def move(s):
+    while True:
+        try:
+            num = int(input(s))
+            if 1 <= num <= 4:
+                return num
+            else:
+                print('You can take only 1, 2, 3 or 4 matches!!!')
+                continue
+        except ValueError:
+            print("Something is wrong, try one more time!")
+
+
 def play_bot():
-    
+    print('You are playing with bot.')
+    bank = 21
+    player = randint(0, 1)
+    while bank > 0:
+        if player:
+            bank -= move(
+                f'It`s your move, player. {bank} matches left. How many will you take: ')
+            player = 0
+        else:
+            turn = bot_logic(bank)
+            bank -= turn
+            print(f'Bot`s move. Bot is taking {turn} matches.')
+            player = 1
+    return not player
 
-def play_friend():
 
+def play_friend(player1, player2):
+    bank = 21
+    player = randint(0, 1)
+    while bank > 0:
+        if player:
+            bank -= move(
+                f'It`s your move, {player1}. {bank} matches left. How many will you take: ')
+            player = 0
+        else:
+            turn = bot_logic(bank)
+            bank -= move(
+                f'It`s your move, {player2}. {bank} matches left. How many will you take: ')
+            player = 1
+    return not player
+
+
+main()
 
 # 40 Вы когда-нибудь играли в игру "Крестики-нолики"? Попробуйте создать её.
 
@@ -161,7 +247,7 @@ def play_friend():
 
 
 # 42 Реализовать RLE (https://en.wikipedia.org/wiki/Run-length_encoding) алгоритм.
-# реализовать модуль сжатия и восстановления данных.
+# реализовать модуль сжатия и восстановления данных. .txt
 #   a входные и выходные данные хранятся в отдельных файлах
 
 
