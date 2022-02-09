@@ -250,44 +250,7 @@
 # реализовать модуль сжатия и восстановления данных. .txt
 #   a входные и выходные данные хранятся в отдельных файлах
 
-def main():
-    input = input_data('42_input_decoded.txt')
-    split = split_data(input)
-    result = encrypter(split)
-    output_data(result)
-
-
-def input_data(adress):
-    with open(adress) as file:
-        return file.read()
-
-
-def split_data(input):
-    res = []
-    temp = [input[0]]
-    for i in range(1, len(input)):
-        if input[i] == temp[-1]:
-            temp.append(input[i])
-        else:
-            res.append(temp)
-            temp = [input[i]]
-    res.append(temp)
-    return res
-
-
-def encrypter(ls):
-    s = ''
-    for i in ls:
-        s += str(len(i)) + i[0]
-    return s
-
-
-def output_data(result):
-    with open('42_output_encoded', 'w') as file:
-        file.write(result)
-
-
-main()
+# solved in lection4/example_42_RLE
 
 # 43 Дана последовательность чисел. Получить список уникальных элементов заданной
 # последовательности. Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]

@@ -1,4 +1,3 @@
-
 def split_data(input):
     res = []
     temp = [input[0]]
@@ -12,8 +11,8 @@ def split_data(input):
     return res
 
 
-def encrypter(ls):
+def encoder(input):
     s = ''
-    for i in ls:
+    for i in split_data(input):
         s += str(len(i)) + i[0]
     return s

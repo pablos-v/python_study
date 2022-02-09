@@ -1,3 +1,3 @@
-def output_data(result):
-    with open('42_output_encoded', 'w') as file:
+def output_data(result, adress):
+    with open(adress, 'w') as file:
         file.write(result)
