@@ -1,11 +1,20 @@
+op = '+-*/'
+
 def solve(str):
-    for i in range(len(str)):
-        if str[i] == '+':
-            res = int(str[:i]) + int(str[i+1:])
-        if str[i] == '-':
-            res = int(str[:i]) - int(str[i+1:])
-        if str[i] == '*':
-            res = int(str[:i]) * int(str[i+1:])
-        if str[i] == '/':
-            res = int(str[:i]) / int(str[i+1:])
-    return res
+    if len(str) == 1:
+        return str
+    for i in range(len(str)-1, -1):
+        if '+' or '-' or '*' or '/' in str[i:]:
+            if str[i] in op:
+                return calculate(str[i], int(solve(str[:i])), int(str[i+1]) )
+            else:
+                continue
+
+
+def calculate(operator, a, b):
+    return {
+        '+': lambda: a + b,
+        '-': lambda: a - b,
+        '*': lambda: a * b,
+        '/': lambda: a / b,
+    }.get(operator, lambda: 'Not a valid operation')()
